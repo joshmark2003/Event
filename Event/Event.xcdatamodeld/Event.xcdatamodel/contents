@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName=".Event" syncable="YES">
+        <attribute name="eventDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="eventImageList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventImages" inverseName="event" inverseEntity="EventImages" syncable="YES"/>
+    </entity>
+    <entity name="EventImages" representedClassName=".EventImages" syncable="YES">
+        <attribute name="eventImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventVideoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="eventImageList" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-918" positionY="-18" width="128" height="118"/>
+        <element name="EventImages" positionX="-720" positionY="9" width="128" height="88"/>
+    </elements>
+</model>
